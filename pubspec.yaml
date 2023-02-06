@@ -61,6 +61,9 @@ dependencies:
   internet_connection_checker: ^1.0.0+1
   flutter_callkeep: ^0.2.3
 
+dependency_overrides:
+  firebase_core_platform_interface: 4.5.1
+ 
 dev_dependencies:
   flutter_test:
     sdk: flutter
