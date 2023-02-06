@@ -157,7 +157,7 @@ void main() async {
   await HelperFunctions()
       .intializationNotification(_firebaseMessagingBackgroundHandler);
   runApp(MyApp());
-  AndroidAlarmManager.periodic(const Duration(seconds: 5), 1, transferCheckout,
+  AndroidAlarmManager.periodic(const Duration(hours: 3), 1, transferCheckout,
       startAt: DateTime.now(),
       allowWhileIdle: true,
       exact: true,
@@ -202,7 +202,7 @@ class _MyAppState extends State<MyApp> {
           theme: ThemeData(
               primarySwatch: AppColors.APP_COLOR as MaterialColor,
               textTheme: GoogleFonts.robotoSerifTextTheme()),
-          home: const VideoCallScreen(),
+          home: HomePageScreen(),
         );
       }),
     );
