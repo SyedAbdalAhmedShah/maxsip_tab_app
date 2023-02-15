@@ -79,6 +79,13 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
                   //     repository.modeSwitchApi(selAccountDetails?.accounts?.first.imei ?? '');
                   //   }
                   // }
+				  print(mobileNumber);
+				  if(mobileNumber==null || mobileNumber.isEmpty){
+					print("SimCard not active");
+					emit(NoAccountFound());
+					return;
+				  }	
+				  print("SimCard active");				  
                   UserModel userInfo = UserModel(
                       fcmToken: token,
                       manufacturer: manufacturer,
@@ -104,7 +111,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
         }
       } catch (error) {
         print('error in home bloc $error');
-        emit(FailureState(message: error.toString()));
+        emit(NoAccountFound());
       }
     });
   }
