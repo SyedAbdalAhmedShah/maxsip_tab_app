@@ -10,7 +10,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:788896428841:android:9e5d81fa52f320b8507d38",
         "android_client_info": {
-          "package_name": "com.maxsiptel.app"
+          "package_name": "com.example.maxsip"
         }
       },
       "oauth_client": [
@@ -21,7 +21,10 @@
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDFy-8wuc1rEb7OeSVaW8Ilr3r6O4X-8lo"
+          "current_key": "AIzaSyB9TaVOpUldkUog-lCIeNTYsnrYd0GXgas"
+        },
+        {
+          "current_key": "AIzaSyBOgQkt_ncbB6CUNKBW1oLyQPwbYKH-bHg"
         }
       ],
       "services": {
@@ -35,7 +38,7 @@
               "client_id": "788896428841-t4flvs5jo2i2t7a85bo43fe3l4t57chs.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.maxsiptel.appTest"
+                "bundle_id": "com.example.maxsipTest"
               }
             }
           ]
@@ -46,7 +49,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:788896428841:android:6c0e29f84f657b5f507d38",
         "android_client_info": {
-          "package_name": "com.maxsiptel.app_firebase"
+          "package_name": "com.example.maxsip_firebase"
         }
       },
       "oauth_client": [
@@ -57,7 +60,10 @@
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDFy-8wuc1rEb7OeSVaW8Ilr3r6O4X-8lo"
+          "current_key": "AIzaSyB9TaVOpUldkUog-lCIeNTYsnrYd0GXgas"
+        },
+        {
+          "current_key": "AIzaSyBOgQkt_ncbB6CUNKBW1oLyQPwbYKH-bHg"
         }
       ],
       "services": {
@@ -71,7 +77,7 @@
               "client_id": "788896428841-t4flvs5jo2i2t7a85bo43fe3l4t57chs.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.maxsiptel.appTest"
+                "bundle_id": "com.example.maxsipTest"
               }
             }
           ]
@@ -82,7 +88,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:788896428841:android:6e860dbef0b0a931507d38",
         "android_client_info": {
-          "package_name": "com.maxsiptel.app_test"
+          "package_name": "com.example.maxsip_test"
         }
       },
       "oauth_client": [
@@ -93,7 +99,10 @@
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDFy-8wuc1rEb7OeSVaW8Ilr3r6O4X-8lo"
+          "current_key": "AIzaSyB9TaVOpUldkUog-lCIeNTYsnrYd0GXgas"
+        },
+        {
+          "current_key": "AIzaSyBOgQkt_ncbB6CUNKBW1oLyQPwbYKH-bHg"
         }
       ],
       "services": {
@@ -107,7 +116,93 @@
               "client_id": "788896428841-t4flvs5jo2i2t7a85bo43fe3l4t57chs.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.maxsiptel.appTest"
+                "bundle_id": "com.example.maxsipTest"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:788896428841:android:7fbc38e8d17fb10b507d38",
+        "android_client_info": {
+          "package_name": "com.jawad.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "788896428841-m56p0jgkbn60lopjgds4mk45gofsrf3a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB9TaVOpUldkUog-lCIeNTYsnrYd0GXgas"
+        },
+        {
+          "current_key": "AIzaSyBOgQkt_ncbB6CUNKBW1oLyQPwbYKH-bHg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "788896428841-m56p0jgkbn60lopjgds4mk45gofsrf3a.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "788896428841-t4flvs5jo2i2t7a85bo43fe3l4t57chs.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.maxsipTest"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:788896428841:android:a14bd14e846a0836507d38",
+        "android_client_info": {
+          "package_name": "com.maxsiptel.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "788896428841-f495hio6smukrbu37iud07ut7kj07lrl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.maxsiptel.app",
+            "certificate_hash": "079532c948d489fc2daa8e7e1676add2445cfb56"
+          }
+        },
+        {
+          "client_id": "788896428841-m56p0jgkbn60lopjgds4mk45gofsrf3a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB9TaVOpUldkUog-lCIeNTYsnrYd0GXgas"
+        },
+        {
+          "current_key": "AIzaSyBOgQkt_ncbB6CUNKBW1oLyQPwbYKH-bHg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "788896428841-m56p0jgkbn60lopjgds4mk45gofsrf3a.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "788896428841-t4flvs5jo2i2t7a85bo43fe3l4t57chs.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.maxsipTest"
               }
             }
           ]
@@ -129,7 +224,10 @@
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDFy-8wuc1rEb7OeSVaW8Ilr3r6O4X-8lo"
+          "current_key": "AIzaSyB9TaVOpUldkUog-lCIeNTYsnrYd0GXgas"
+        },
+        {
+          "current_key": "AIzaSyBOgQkt_ncbB6CUNKBW1oLyQPwbYKH-bHg"
         }
       ],
       "services": {
@@ -143,7 +241,7 @@
               "client_id": "788896428841-t4flvs5jo2i2t7a85bo43fe3l4t57chs.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.maxsiptel.appTest"
+                "bundle_id": "com.example.maxsipTest"
               }
             }
           ]

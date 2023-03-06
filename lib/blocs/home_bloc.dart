@@ -40,6 +40,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
 
               SharedPreferences preferences = await SharedPreferences.getInstance();
               preferences.reload();
+
               String? token = await FirebaseMessaging.instance.getToken();
               print("FCM TOKEN $token");
               String? transferStatus = preferences.getString('TransferoutStatus');
@@ -79,13 +80,13 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
                   //     repository.modeSwitchApi(selAccountDetails?.accounts?.first.imei ?? '');
                   //   }
                   // }
-				  print(mobileNumber);
-				  if(mobileNumber==null || mobileNumber.isEmpty){
-					print("SimCard not active");
-					emit(NoAccountFound());
-					return;
-				  }	
-				  print("SimCard active");				  
+                  print(mobileNumber);
+                  if (mobileNumber == null || mobileNumber.isEmpty) {
+                    print("SimCard not active");
+                    emit(NoAccountFound());
+                    return;
+                  }
+                  print("SimCard active");
                   UserModel userInfo = UserModel(
                       fcmToken: token,
                       manufacturer: manufacturer,
@@ -111,7 +112,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
         }
       } catch (error) {
         print('error in home bloc $error');
-        emit(NoAccountFound());
+        emit(FailureState(message: error.toString()));
       }
     });
   }

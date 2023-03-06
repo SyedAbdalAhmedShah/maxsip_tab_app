@@ -10,6 +10,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:maxsip/blocs/home_bloc.dart';
+import 'package:maxsip/firebase_options.dart';
 import 'package:maxsip/utils/app_colors.dart';
 import 'package:maxsip/utils/helper_functions.dart';
 import 'package:maxsip/utils/strings.dart';
@@ -26,8 +27,7 @@ void callBack(String tag) {
   switch (tag) {
     case "simple_button":
       HelperFunctions().updateButton(transferStatus: Strings.reminder);
-      SystemAlertWindow.closeSystemWindow(
-          prefMode: SystemWindowPrefMode.OVERLAY);
+      SystemAlertWindow.closeSystemWindow(prefMode: SystemWindowPrefMode.OVERLAY);
       break;
     case "updated_simple_button":
       HelperFunctions().updateButton(transferStatus: Strings.agree);
@@ -39,8 +39,7 @@ void callBack(String tag) {
       log("Focus button has been called");
       break;
     case 'ok':
-      SystemAlertWindow.closeSystemWindow(
-          prefMode: SystemWindowPrefMode.OVERLAY);
+      SystemAlertWindow.closeSystemWindow(prefMode: SystemWindowPrefMode.OVERLAY);
       break;
 
     default:
@@ -64,11 +63,7 @@ Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
           maxsipNumber;
 
   SystemWindowHeader header = SystemWindowHeader(
-    title: SystemWindowText(
-        text: "Maxsip Telecom",
-        fontSize: 25,
-        fontWeight: FontWeight.BOLD,
-        textColor: Colors.blue),
+    title: SystemWindowText(text: "Maxsip Telecom", fontSize: 25, fontWeight: FontWeight.BOLD, textColor: Colors.blue),
     padding: SystemWindowPadding.setSymmetricPadding(12, 100),
     subTitle: SystemWindowText(
         text: notificationText,
@@ -91,50 +86,31 @@ Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
           buttons: [
             SystemWindowButton(
               text: SystemWindowText(
-                  text: "I wish to continue receiving my benefits",
-                  fontSize: 15,
-                  textColor: Colors.black),
+                  text: "I wish to continue receiving my benefits", fontSize: 15, textColor: Colors.black),
               tag: "updated_simple_button",
               width: 0,
               height: SystemWindowButton.WRAP_CONTENT,
               decoration: SystemWindowDecoration(
-                  startColor: Colors.lightGreen,
-                  endColor: Colors.lightGreen,
-                  borderWidth: 0,
-                  borderRadius: 0.0),
+                  startColor: Colors.lightGreen, endColor: Colors.lightGreen, borderWidth: 0, borderRadius: 0.0),
             ),
             if (isReminderButtonPressed != Strings.reminderTrue)
               SystemWindowButton(
-                text: SystemWindowText(
-                    text: "Please Remind me later",
-                    fontSize: 15,
-                    textColor: Colors.black),
+                text: SystemWindowText(text: "Please Remind me later", fontSize: 15, textColor: Colors.black),
                 tag: "simple_button",
-                padding: SystemWindowPadding(
-                    left: 10, right: 10, bottom: 10, top: 10),
+                padding: SystemWindowPadding(left: 10, right: 10, bottom: 10, top: 10),
                 width: 0,
                 height: SystemWindowButton.WRAP_CONTENT,
                 decoration: SystemWindowDecoration(
-                    startColor: Colors.yellow,
-                    endColor: Colors.yellow,
-                    borderWidth: 0,
-                    borderRadius: 0.0),
+                    startColor: Colors.yellow, endColor: Colors.yellow, borderWidth: 0, borderRadius: 0.0),
               ),
             SystemWindowButton(
-              text: SystemWindowText(
-                  text: "i wish to cancel my benefit",
-                  fontSize: 15,
-                  textColor: Colors.black),
+              text: SystemWindowText(text: "i wish to cancel my benefit", fontSize: 15, textColor: Colors.black),
               tag: "red_button",
-              padding:
-                  SystemWindowPadding(left: 10, right: 10, bottom: 10, top: 10),
+              padding: SystemWindowPadding(left: 10, right: 10, bottom: 10, top: 10),
               width: 0,
               height: SystemWindowButton.WRAP_CONTENT,
               decoration: SystemWindowDecoration(
-                  startColor: Colors.redAccent,
-                  endColor: Colors.redAccent,
-                  borderWidth: 0,
-                  borderRadius: 0.0),
+                  startColor: Colors.redAccent, endColor: Colors.redAccent, borderWidth: 0, borderRadius: 0.0),
             ),
           ]),
       prefMode: SystemWindowPrefMode.OVERLAY);
@@ -145,23 +121,19 @@ Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
   await Firebase.initializeApp();
   // const AndroidInitializationSettings initializationSettingsAndroid = AndroidInitializationSettings('app_icon');
   // FlutterLocalNotificationsPlugin().initialize(const InitializationSettings(android: initializationSettingsAndroid));
   await AndroidAlarmManager.initialize();
   MobileAds.instance.initialize();
-  await SystemAlertWindow.requestPermissions(
-      prefMode: SystemWindowPrefMode.OVERLAY);
+  await SystemAlertWindow.requestPermissions(prefMode: SystemWindowPrefMode.OVERLAY);
   await Permission.ignoreBatteryOptimizations.request();
   await Permission.phone.request();
-  await HelperFunctions()
-      .intializationNotification(_firebaseMessagingBackgroundHandler);
+  await HelperFunctions().intializationNotification(_firebaseMessagingBackgroundHandler);
   runApp(MyApp());
   AndroidAlarmManager.periodic(const Duration(hours: 3), 1, transferCheckout,
-      startAt: DateTime.now(),
-      allowWhileIdle: true,
-      exact: true,
-      rescheduleOnReboot: true);
+      startAt: DateTime.now(), allowWhileIdle: true, exact: true, rescheduleOnReboot: true);
 }
 
 class MyApp extends StatefulWidget {
@@ -196,15 +168,16 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (BuildContext context) => HomeBloc(),
-      child: ResponsiveSizer(builder: (context, orientation, screenType) {
-        return MaterialApp(
-          title: Strings.appName,
-          theme: ThemeData(
-              primarySwatch: AppColors.APP_COLOR as MaterialColor,
-              textTheme: GoogleFonts.robotoSerifTextTheme()),
-          home: HomePageScreen(),
-        );
-      }),
+      child: ResponsiveSizer(
+        builder: (context, orientation, screenType) {
+          return MaterialApp(
+            title: Strings.appName,
+            theme: ThemeData(
+                primarySwatch: AppColors.APP_COLOR as MaterialColor, textTheme: GoogleFonts.robotoSerifTextTheme()),
+            home: HomePageScreen(),
+          );
+        },
+      ),
     );
   }
 }
